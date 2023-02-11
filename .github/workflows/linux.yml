@@ -1,0 +1,25 @@
+name: Linux Tag Checker
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  running:
+    runs-on: ubuntu-latest
+
+    env:
+      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+      TELEGRAM_CHAT: ${{ secrets.MULTIPLE_CHAT }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Checking
+        run: |
+          git config --global user.name "XSansDroid"
+          git config --global user.email "xsansactions4@gmail.com"
+          git clone https://XSans0:$GIT_TOKEN@github.com/XSans0/linux-tag-checker.git
+          cd linux-tag-checker
+          bash check.sh
