@@ -1,0 +1,23 @@
+name: Clang build test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    env:
+      LLVM_BRANCH: main
+      GIT_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+      USERNAME: XSans
+      EMAIL: xsansdroid@gmail.com
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Building
+        run: |
+          git clone -b rebase https://github.com/XSans0/clang-build
+          cd clang-build || exit
+          bash ci.sh deps
+          bash build.sh
