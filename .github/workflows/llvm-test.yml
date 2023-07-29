@@ -9,9 +9,7 @@ jobs:
 
     env:
       LLVM_BRANCH: main
-      GIT_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-      USERNAME: XSans
-      EMAIL: xsansdroid@gmail.com
+      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
