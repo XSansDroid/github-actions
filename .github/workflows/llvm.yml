@@ -19,7 +19,7 @@ jobs:
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: build ${{ matrix.branch }} branch
         run: |
           git clone -b main https://github.com/XSans0/clang-build

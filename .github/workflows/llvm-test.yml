@@ -11,7 +11,7 @@ jobs:
       GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Building
         run: |
           git clone -b rewrite https://github.com/XSans0/clang-build
