@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        branch: [main, release/17.x]
+        branch: [main, release/18.x]
 
     env:
       BRANCH: ${{ matrix.branch }}
